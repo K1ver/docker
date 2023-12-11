@@ -1,4 +1,4 @@
-name: ci
+name: node-server-alpine:1.0
 
 on:
   push:
@@ -16,5 +16,11 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v4
       - run: docker build -t ghcr.io/k1ver/node-server-alpine:1.0 .
-      - run: docker push ghcr.io/k1ver/node-server-alpine:1.0
-      - run: docker run ghcr.io/k1ver/node-server-alpine:1.0
+      - name: pushing
+        run: docker push ghcr.io/k1ver/node-server-alpine:1.0
+      - name: check_success
+        if: success()
+        
+      - name: check_failure 
+        if: failure()
+      
