@@ -18,10 +18,18 @@ jobs:
       - run: docker build -t ghcr.io/k1ver/node-server-alpine:1.0 .
       - name: pushing
         run: docker push ghcr.io/k1ver/node-server-alpine:1.0
-      - name: check_success
-        if: success()
+      - name: TelegramNotificationSuccess
         uses: K1ver/docker@main
-        
-      - name: check_failure 
+        if: success()
+        with:
+            to: ${{ secrets.TELEGRAM_CHAT_ID }}
+            token: ${{ secrets.TELEGRAM_TOKEN }}
+            message: Success
+      - name: TelegramNotificationFailure
+        uses: K1ver/docker@main
         if: failure()
+        with:
+            to: ${{ secrets.TELEGRAM_CHAT_ID }}
+            token: ${{ secrets.TELEGRAM_TOKEN }}
+            message: Failure
       
