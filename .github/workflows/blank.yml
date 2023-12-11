@@ -15,6 +15,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v4
-      - run: docker build -t ghcr.io/k1ver/tes-python-app:1.0 .
-      - run: docker push ghcr.io/k1ver/tes-python-app:1.0
-      - run: docker run ghcr.io/k1ver/tes-python-app:1.0
+      - run: docker build -t ghcr.io/k1ver/node-server-alpine:1.0 .
+      - run: docker push ghcr.io/k1ver/node-server-alpine:1.0
+      - run: docker run ghcr.io/k1ver/node-server-alpine:1.0
