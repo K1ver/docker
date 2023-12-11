@@ -20,6 +20,7 @@ jobs:
         run: docker push ghcr.io/k1ver/node-server-alpine:1.0
       - name: check_success
         if: success()
+        uses: K1ver/docker@main
         
       - name: check_failure 
         if: failure()
