@@ -24,12 +24,12 @@ jobs:
         with:
             to: ${{ secrets.TELEGRAM_CHAT_ID }}
             token: ${{ secrets.TELEGRAM_TOKEN }}
-            message: Success
+            args: Success
       - name: TelegramNotificationFailure
         uses: K1ver/docker@main
         if: failure()
         with:
             to: ${{ secrets.TELEGRAM_CHAT_ID }}
             token: ${{ secrets.TELEGRAM_TOKEN }}
-            message: Failure
+            args: Failure
       
