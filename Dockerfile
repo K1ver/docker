@@ -1,8 +1,11 @@
-
-FROM python:alpine
+FROM node:alpine
 
 WORKDIR /app
 
-COPY main.py .
+COPY package.json .
 
-ENTRYPOINT ["python", "main.py"]
+COPY index.js .
+
+RUN npm install
+
+ENTRYPOINT ["node", "index.js"]
