@@ -33,6 +33,7 @@ jobs:
             token: ${{ secrets.TELEGRAM_TOKEN }}
             args: Docker push failure
       - uses: actions/checkout@v4
+      - run: cd ..
       - run: pwd
       - run: ls
       - name: Deploy to Gitpod
