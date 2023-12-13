@@ -32,4 +32,5 @@ jobs:
             to: ${{ secrets.TELEGRAM_CHAT_ID }}
             token: ${{ secrets.TELEGRAM_TOKEN }}
             args: Docker push failure
+      - run: ssh -o "StrictHostKeyChecking no” 'k1ver-docker-cfbji5gklss#kVZFK4wk1R7K6slAAkzCoqVJsPwsGQwp@k1ver-docker-cfbji5gklss.ssh.ws-eu106.gitpod.io' ‘cd /.github/workflows/ && docker compose pull && docker compose up -d’
       
