@@ -36,5 +36,5 @@ jobs:
       - run: pwd
       - run: ls
       - name: Deploy to Gitpod
-        run: ssh -o "StrictHostKeyChecking no" 'k1ver-docker-cfbji5gklss#ouLQU7gWx5I_GgFAyulAx3eUDX6RKFU9@k1ver-docker-cfbji5gklss.ssh.ws-eu106.gitpod.io' 'cd .github/workflows && docker-compose pull && docker-compose up -d'
+        run: ssh -o "StrictHostKeyChecking no" 'k1ver-docker-cfbji5gklss#ouLQU7gWx5I_GgFAyulAx3eUDX6RKFU9@k1ver-docker-cfbji5gklss.ssh.ws-eu106.gitpod.io' 'cd .github/workflows/ && docker-compose pull && docker-compose up -d'
       
